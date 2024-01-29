@@ -4,9 +4,12 @@ const cors=require('cors')
 const app=express()
 const connectionURI='mongodb://localhost:27017/mydb'
 const PORT = process.env.PORT || 4000;
+const textInputRoute=require('./src/routes/textInputRoute')
 
 app.use(cors())
 app.use(express.json())
+app.use('/api',textInputRoute)
+
 
 mongoose.connect(connectionURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
