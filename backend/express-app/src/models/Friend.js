@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const friendSchema = new Schema({
   friendId: {
     type: String,
-    required: true,
   },
   friendsList: [{
     type: Schema.Types.ObjectId,

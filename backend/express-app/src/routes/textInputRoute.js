@@ -6,6 +6,9 @@ const  mongoose  = require('mongoose');
 const Connection = require('../models/Connection');
 const { callDjangoNgramsApi } = require('../services/djangoApiService.js');
 const { storeRecentString } = require('../utils/recentStringStore.js');
+const PersonID = require('../models/PersonID.js');
+const Friend = require('../models/Friend.js');
+
 
 const upload = multer({ dest: 'uploads/' });
 const uploadPhoto = upload.single('photo');
@@ -41,7 +44,11 @@ router.post('/submit',uploadPhoto,async (req,res)=>{
          
         //  4. Create a Django server that has an API that returns the ngrams comparison using NLTK.
         const ngramsData = await callDjangoNgramsApi();
-        res.status(201).json(savedText,connection)
+        res.status(201).json({
+            user: savedText,
+            ngrams: ngramsData,
+            connectionCount:connection.count
+          });
     } catch(error){
         res.status(500).json({message:error.message})
     }

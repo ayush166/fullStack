@@ -1,0 +1,37 @@
+.dashboard-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .dashboard-content {
+    padding: 20px;
+  }
+  
+  .submission-form {
+    margin-bottom: 20px;
+  }
+  
+  .submission-status {
+    font-weight: bold;
+    color: green; /* or red for errors */
+  }
+  
+  .ngrams-data {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  .ngrams-section {
+    margin-bottom: 10px;
+  }
+
+  .green-status {
+    color: green;
+  }
+  .error{
+    color:red;
+  }

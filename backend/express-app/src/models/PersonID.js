@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const personIDSchema = new Schema({
   personID: {
     type: String,
-    required: true
+   
   },
 });
 
